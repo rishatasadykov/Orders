@@ -5,16 +5,16 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import org.itis.app.entity.User;
+import org.itis.app.util.HibernateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+@Component
 public class UserRepositoryImpl implements UserRepository {
 	List<User> users = new ArrayList<User>();
 	private SessionFactory sessionFactory;
-	public UserRepositoryImpl(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	public UserRepositoryImpl() {
+		this.sessionFactory = HibernateUtil.getSessionFactory();
 	}
 
 	public void saveUser(User user) {

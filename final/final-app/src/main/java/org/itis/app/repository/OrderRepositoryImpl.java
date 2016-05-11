@@ -5,10 +5,10 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
 import org.itis.app.entity.Order;
-import org.itis.app.entity.User;
+import org.itis.app.util.HibernateUtil;
+import org.springframework.stereotype.Component;
+@Component
 public class OrderRepositoryImpl implements OrderRepository {
 	private SessionFactory sessionFactory;
 	List<Order> orders = new ArrayList<Order>();
@@ -20,8 +20,8 @@ public class OrderRepositoryImpl implements OrderRepository {
 		return orders;
 	}
 	
-	public OrderRepositoryImpl(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+	public OrderRepositoryImpl() {
+		this.sessionFactory = HibernateUtil.getSessionFactory();
 	}
 	public void saveOrder(Order order) {
 		Session session = sessionFactory.openSession();
