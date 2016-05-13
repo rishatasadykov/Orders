@@ -27,9 +27,6 @@ public class UserValidator implements Validator {
 		        errors.rejectValue("age", "not_zero", "Zero or negative age!");
 		  		
 		  	}
-
 		}
-		
-	}
-	
+	}	
 }

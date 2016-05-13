@@ -1,6 +1,8 @@
 package org.itis.app.entity;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.jws.soap.SOAPBinding.Style;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,8 +11,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
+import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 @Table(name="USERS", catalog="itis_hib_db")
