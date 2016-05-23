@@ -16,6 +16,8 @@ public class UserValidator implements Validator {
 	public void validate(Object obj, Errors errors) {
 		User user = (User) obj;
 		
+		
+		
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "firstname", "field.required", "Required field");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "lastname", "field.required", "Required field");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "age", "field.required", "Required field");

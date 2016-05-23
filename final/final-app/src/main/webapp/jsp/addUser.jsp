@@ -21,6 +21,6 @@
 	    <form:input path="age"/><br /><br />
 	    <input type="submit" value="Save user"> 
 		</form:form>
-		<a href="/final-app/"><button>Cancel</button></a>
+		<a href="/final-app/users"><button>Cancel</button></a>
 	</body>
 </html>

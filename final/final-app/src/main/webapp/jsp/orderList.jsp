@@ -54,6 +54,6 @@
 </tr>
 </c:forEach>
 </table>
-<a href="/final-app/order/add">Add new</a> <a href="/final-app/">User list</a>
+<a href="/final-app/order/add">Add new</a> <a href="/final-app/users">User list</a>
 </body>
 </html>

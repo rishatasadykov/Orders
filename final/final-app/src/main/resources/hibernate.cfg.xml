@@ -16,5 +16,6 @@
        <!-- Mappings -->
        <mapping class="org.itis.app.entity.User"/>
        <mapping class="org.itis.app.entity.Order"/>
+       <mapping class="org.itis.app.entity.LoginUser"/>
    </session-factory>
 </hibernate-configuration>

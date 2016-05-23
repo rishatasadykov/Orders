@@ -28,7 +28,7 @@ public class UserController{
 	UserValidator userValidator;
 	@Autowired
 	UserRepository userRepository;
-    @RequestMapping(value="/", method=RequestMethod.GET)
+    @RequestMapping(value="/users", method=RequestMethod.GET)
     public String showUserList(Model model) {
     	try{
         	List<User> users = userRepository.getAllUsers();
@@ -46,12 +46,8 @@ public class UserController{
     @RequestMapping(value="user/delete", method=RequestMethod.GET)
     public String deleteUser(@RequestParam("id") int userId, Model model) {
     	try{
-    		List<Order> orderList = userRepository.getUserById(userId).getOrderList();
-    		OrderRepository orderRepository = new OrderRepositoryImpl();
-    		for (Order o: orderList)
-    			orderRepository.deleteOrder(o.getId());
         	userRepository.deleteUser(userId);
-        	return "redirect:/";
+        	return "redirect:/users";
     	}catch(Exception e){
     		e.printStackTrace();
     	}
@@ -76,7 +72,7 @@ public class UserController{
     			return "updateUser";
     		}
     		userRepository.updateUser(user);
-    		return "redirect:/";
+    		return "redirect:/users";
     	}catch(Exception e){
     		e.printStackTrace();
     	}
@@ -101,7 +97,7 @@ public class UserController{
     			return "addUser";
     		}
     		userRepository.saveUser(user);
-    		return "redirect:/";
+    		return "redirect:/users";
     	}catch(Exception e){
     		e.printStackTrace();
     	}

@@ -1,4 +1,5 @@
 package org.itis.app.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,8 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.format.annotation.NumberFormat;
 
 @Entity
 @Table(name="ORDERS", catalog="itis_hib_db")
